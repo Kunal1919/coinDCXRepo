@@ -42,19 +42,6 @@ const calculateData = (param) => {
     quantity_buy;
   console.log("OP_2", OP_2);
   console.log("******************************************");
-  // <div>
-  //       <div>inr_pair, {inr_pair}</div>
-  //       <div>"usdt_pair", {usdt_pair}</div>
-  //       <div>"pair_inr_buy", {pair_inr_buy}</div>
-  //       <div>"pair_inr_sell", {pair_inr_sell}</div>
-  //       <div>"pair_usdt_buy", {pair_usdt_buy}</div>
-  //       <div>"pair_usdt_sell", {pair_usdt_sell}</div>
-  //       <div>"usdt_inr_buy", {usdt_inr_buy}</div>
-  //       <div>"usdt_inr_sell", {usdt_inr_sell}</div>
-  //       <div>"OP_1", {OP_1}</div>
-  //       <div>"OP_2", {OP_2}</div>
-  //       {" "}
-  //     </div>
   const buyClass =
     OP_1 > 0
       ? "bgColorGreen borderAll W60 alignContentCenter"
@@ -77,18 +64,40 @@ const calculateData = (param) => {
         </div>
         <div className="displayFlex">
           <div className="W40 borderAll">{inr_pair}</div>
-          <div className="W30 borderAll">{pair_inr_buy}</div>
-          <div className="W30 borderAll">{pair_inr_sell}</div>
+          <div className="W30 borderAll">
+            {pair_inr_buy > 0 ? Number(pair_inr_buy).toFixed(4) : pair_inr_buy}
+          </div>
+          <div className="W30 borderAll">
+            {pair_inr_sell > 0
+              ? Number(pair_inr_sell).toFixed(4)
+              : pair_inr_sell}
+          </div>
         </div>
         <div className="displayFlex">
           <div className="W40 borderAll">{usdt_pair}</div>
-          <div className="W30 borderAll">{pair_usdt_buy}</div>
-          <div className="W30 borderAll">{pair_usdt_sell}</div>
+          <div className="W30 borderAll">
+            {pair_usdt_buy > 0
+              ? Number(pair_usdt_buy).toFixed(4)
+              : pair_usdt_buy}
+          </div>
+          <div className="W30 borderAll">
+            {pair_usdt_sell > 0
+              ? Number(pair_usdt_sell).toFixed(4)
+              : pair_usdt_sell}
+          </div>
         </div>
         <div className="displayFlex">
           <div className="W40 borderAll"> USDT/INR</div>
-          <div className="W30 borderAll"> {usdt_inr_buy}</div>
-          <div className="W30 borderAll"> {usdt_inr_sell}</div>
+          <div className="W30 borderAll">
+            {" "}
+            {usdt_inr_buy > 0 ? Number(usdt_inr_buy).toFixed(4) : usdt_inr_buy}
+          </div>
+          <div className="W30 borderAll">
+            {" "}
+            {usdt_inr_sell > 0
+              ? Number(usdt_inr_sell).toFixed(4)
+              : usdt_inr_sell}
+          </div>
         </div>
         <div className="displayFlex">
           <div className="W40 borderAll"> QUANTITY</div>
@@ -97,13 +106,13 @@ const calculateData = (param) => {
         </div>
         <div className="displayFlex">
           <div className="borderAll W60">
-            Sell {inr_pair} - Buy {usdt_pair}
+            Sell {inr_pair} & Buy {usdt_pair}
           </div>
           <div className={buyClass}>{roundToTwo(OP_1)}</div>
         </div>
         <div className="displayFlex">
           <div className="borderAll W60">
-            Sell {usdt_pair} - Buy {inr_pair}
+            Sell {usdt_pair} & Buy {inr_pair}
           </div>
           <div className={sellClass}> {roundToTwo(OP_2)}</div>
         </div>
@@ -315,44 +324,7 @@ const Fetch = () => {
             });
         })
       );
-
-      // if (index === pairQuantity.length - 1) {
-      //   resolve({ qb, qs });
-      // }
     });
-    // Object.keys(pairQuantity).forEach((i, index) => {
-    //   console.log("PPPP_QUANTITY", Object.keys(pairQuantity[i])[0]);
-    //   fetch(
-    //     `https://public.coindcx.com/market_data/orderbook?pair=${
-    //       Object.values(pairQuantity[i])[0]
-    //     }`
-    //   )
-    //     .then(async (res) => {
-    //       return res.json();
-    //       // if (data && Object.keys(data).length) {
-    //       //   const quantity_buy = Object.values(data.asks)[0];
-    //       //   const quantity_sell = Object.values(data.bids)[0];
-    //       //   qb[Object.keys(pairQuantity[i])[0]] = quantity_buy;
-    //       //   qs[Object.keys(pairQuantity[i])[0]] = quantity_sell;
-    //       //   console.log("qb", qb);
-    //       //   console.log("qs", qs);
-    //       // }
-    //     })
-    //     .then((data) => {
-    //       // const data = await res.json();
-    //       if (data && Object.keys(data).length) {
-    //         const quantity_buy = Object.values(data.asks)[0];
-    //         const quantity_sell = Object.values(data.bids)[0];
-    //         qb[Object.keys(pairQuantity[i])[0]] = quantity_buy;
-    //         qs[Object.keys(pairQuantity[i])[0]] = quantity_sell;
-    //         console.log("qb", qb);
-    //         console.log("qs", qs);
-    //       }
-    //     });
-    //   if (index === pairQuantity.length - 1) {
-    //     resolve({ qb, qs });
-    //   }
-    // });
 
     console.log("DDDD1");
     let priceP = await pricePromise;
@@ -446,38 +418,23 @@ const Fetch = () => {
     return [];
   };
 
-  //   <PairView
-  //   data={data}
-  //   pairInrData={pairInrData}
-  //   pairUsdtData={pairUsdtData}
-  //   pairQuantity={pairQuantity}
-  //   tradefee={tradefee}
-  //   dANDwfee={dANDwfee}
-  //   quantityDataBuy={quantityDataBuy}
-  //   quantityDataSell={quantityDataSell}
-  // />
-
   let aaa;
-  // useEffect(() => {
-  //   if (ref.current === undefined) {
-  //     getServerData().then((value) => {
-  //       // console.log("DONE_VALUE", value);
-  //       aaa = prepareComponent(value);
-  //       setData(aaa);
-  //       // console.log("DONE_VALUE_aaa", aaa);
-  //     });
-  //     ref.current = "called";
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (ref.current === undefined) {
+      getServerData().then((value) => {
+        aaa = prepareComponent(value);
+        setData(aaa);
+      });
+      ref.current = "called";
+    }
+  }, []);
 
   useEffect(() => {
     let tempData;
     setInterval(() => {
       getServerData().then((value) => {
-        // console.log("DONE_VALUE_ITERATION", value);
         aaa = prepareComponent(value);
         setData(aaa);
-        // console.log("DONE_VALUE_ITERATION_aaa", aaa);
       });
     }, 4000);
   }, []);
