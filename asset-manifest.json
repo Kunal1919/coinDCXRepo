@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/coindcxrepo/static/css/main.a2f1a690.css",
+    "main.js": "/coindcxrepo/static/js/main.c2325c22.js",
+    "static/js/453.eb98aade.chunk.js": "/coindcxrepo/static/js/453.eb98aade.chunk.js",
+    "static/media/logo.svg": "/coindcxrepo/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/coindcxrepo/index.html",
+    "main.a2f1a690.css.map": "/coindcxrepo/static/css/main.a2f1a690.css.map",
+    "main.c2325c22.js.map": "/coindcxrepo/static/js/main.c2325c22.js.map",
+    "453.eb98aade.chunk.js.map": "/coindcxrepo/static/js/453.eb98aade.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a2f1a690.css",
+    "static/js/main.c2325c22.js"
+  ]
+}
