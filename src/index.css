@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #d4d8dc;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  /* font-size: 30px; */
+  text-align: center;
+  border-radius: 5px;
+  margin: 3px;
+}
+
+.displayFlex{
+  display: flex !important;
+}
+
+.headerBorder {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 6px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 12px;
+  background-color: beige;
+}
+
+.W25{
+  width:25%
+}
+
+.W30{
+  width:30%
+}
+
+.W40{
+  width:40%
+}
+
+.W50{
+  width:50%
+}
+
+.W60{
+  width:60%
+}
+
+div {
+  font-size: small;
+}
+
+.borderAll{
+  border:1px solid
+}
+
+.bgHeaderColor{
+  background-color: beige;
+}
+
+.bgColorRed{
+  background-color: red;
+}
+
+.bgColorGreen{
+  background-color: green;
+}
+
+.alignContentCenter{
+  align-content: center;
+}
